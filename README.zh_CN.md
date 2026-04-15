@@ -1,5 +1,7 @@
 # qubit-mixin
 
+[![CircleCI](https://circleci.com/gh/qubit-ltd/rs-mixin.svg?style=shield)](https://circleci.com/gh/qubit-ltd/rs-mixin)
+[![codecov](https://codecov.io/gh/qubit-ltd/rs-mixin/branch/main/graph/badge.svg)](https://codecov.io/gh/qubit-ltd/rs-mixin)
 [![Crate](https://img.shields.io/crates/v/qubit-mixin.svg)](https://crates.io/crates/qubit-mixin)
 [![Documentation](https://docs.rs/qubit-mixin/badge.svg)](https://docs.rs/qubit-mixin)
 [![License](https://img.shields.io/crates/l/qubit-mixin.svg)](https://github.com/qubit-ltd/rs-mixin/blob/main/LICENSE)
