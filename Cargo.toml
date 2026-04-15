@@ -1,0 +1,32 @@
+[package]
+name = "qubit-mixin"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+authors = ["Haixing Hu <starfish.hu@gmail.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/qubit-ltd/rs-mixin"
+description = "Trait mixins for domain objects, providing common properties and behaviors"
+homepage = "https://github.com/qubit-ltd/rs-mixin"
+documentation = "https://docs.rs/qubit-mixin"
+readme = "README.md"
+keywords = ["mixin", "trait", "domain", "model", "qubit"]
+categories = ["data-structures", "rust-patterns"]
+exclude = [
+    "coverage.sh",
+    "COVERAGE.md",
+    "COVERAGE.zh_CN.md",
+    ".circleci/*",
+    "ci-check.sh",
+    ".llvm-cov.toml",
+    ".cargo-audit.toml.example",
+]
+
+[lib]
+name = "qubit_mixin"
+doctest = false
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+
