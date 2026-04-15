@@ -1,14 +1,13 @@
 # qubit-mixin
 
 [![CircleCI](https://circleci.com/gh/qubit-ltd/rs-mixin.svg?style=shield)](https://circleci.com/gh/qubit-ltd/rs-mixin)
-[![codecov](https://codecov.io/gh/qubit-ltd/rs-mixin/branch/main/graph/badge.svg)](https://codecov.io/gh/qubit-ltd/rs-mixin)
-[![Crate](https://img.shields.io/crates/v/qubit-mixin.svg)](https://crates.io/crates/qubit-mixin)
-[![Documentation](https://docs.rs/qubit-mixin/badge.svg)](https://docs.rs/qubit-mixin)
-[![License](https://img.shields.io/crates/l/qubit-mixin.svg)](https://github.com/qubit-ltd/rs-mixin/blob/main/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/qubit-ltd/rs-mixin/badge.svg?branch=main)](https://coveralls.io/github/qubit-ltd/rs-mixin?branch=main)
+[![Crates.io](https://img.shields.io/crates/v/qubit-mixin.svg?color=blue)](https://crates.io/crates/qubit-mixin)
+[![Rust](https://img.shields.io/badge/rust-1.70+-blue.svg?logo=rust)](https://www.rust-lang.org)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![中文文档](https://img.shields.io/badge/文档-中文版-blue.svg)](README.zh_CN.md)
 
 Trait mixins for domain objects, providing common properties and behaviors.
-
-[中文说明](README.zh_CN.md)
 
 ## Overview
 
