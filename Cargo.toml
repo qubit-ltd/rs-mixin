@@ -1,8 +1,8 @@
 [package]
 name = "qubit-mixin"
-version = "0.1.1"
-edition = "2021"
-rust-version = "1.70"
+version = "0.2.0"
+edition = "2024"
+rust-version = "1.94"
 authors = ["Haixing Hu <starfish.hu@gmail.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/qubit-ltd/rs-mixin"
@@ -24,7 +24,7 @@ exclude = [
 
 [lib]
 name = "qubit_mixin"
-doctest = false
+doctest = true
 
 [dependencies]
 chrono = { version = "0.4", features = ["serde"] }
