@@ -19,9 +19,6 @@
 
 //! Traits for associated entity property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has an associated entity
 /// property
@@ -30,9 +27,6 @@
 ///
 /// * `E` - The type of the associated entity
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithEntity<E>
 where
     E: Clone,

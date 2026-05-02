@@ -19,18 +19,12 @@
 
 //! Traits for emptiness checking functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an object has an `is_empty()` method
 ///
 /// This trait is used to determine whether an object is empty in the
 /// business logic sense.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Emptyful {
     /// Determines whether this object is empty in the business logic sense
     ///

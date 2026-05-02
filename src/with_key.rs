@@ -19,15 +19,9 @@
 
 //! Traits for key property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a key property
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithKey {
     /// Gets the key of the current object
     ///

@@ -19,15 +19,9 @@
 
 //! Traits for password property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a password property
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithPassword {
     /// Gets the password of the current object
     ///

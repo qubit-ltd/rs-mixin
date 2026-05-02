@@ -19,9 +19,6 @@
 
 //! Traits for visibility property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a visibility property
 ///
@@ -29,9 +26,6 @@
 ///
 /// * `V` - The type of the visibility, usually an enum type
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithVisibility<V>
 where
     V: Copy,

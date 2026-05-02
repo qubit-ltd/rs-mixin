@@ -19,9 +19,6 @@
 
 //! Traits for creation time recording functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use chrono::{DateTime, Utc};
 
@@ -60,9 +57,6 @@ use chrono::{DateTime, Utc};
 /// assert_eq!(article.create_time(), now);
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Creatable {
     /// Gets the creation time of the current object
     ///

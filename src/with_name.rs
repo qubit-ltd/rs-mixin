@@ -19,9 +19,6 @@
 
 //! Traits for name property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a name property
 ///
@@ -58,9 +55,6 @@
 /// assert_eq!(category.name(), "Computers");
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithName {
     /// Gets the name of the current object
     ///

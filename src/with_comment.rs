@@ -19,9 +19,6 @@
 
 //! Traits for comment property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a comment property
 ///
@@ -58,9 +55,6 @@
 /// assert_eq!(task.comment(), "Focus on error handling");
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithComment {
     /// Gets the comment of the current object
     ///

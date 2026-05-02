@@ -19,15 +19,9 @@
 
 //! Traits for index property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has an index property
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithIndex {
     /// Gets the index of the current object
     ///

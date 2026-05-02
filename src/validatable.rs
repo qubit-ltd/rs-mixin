@@ -19,17 +19,11 @@
 
 //! Traits for validation functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class can be validated
 ///
 /// This trait is used for validating the data of objects.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Validatable {
     /// Validation error type
     type Error;

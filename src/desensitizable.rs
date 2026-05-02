@@ -19,17 +19,11 @@
 
 //! Traits for desensitization functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class can be desensitized
 ///
 /// This trait is used for desensitizing sensitive information.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Desensitizable {
     /// Desensitizes the sensitive information of this entity
     fn desensitize(&mut self);

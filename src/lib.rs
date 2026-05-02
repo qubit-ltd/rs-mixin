@@ -39,9 +39,6 @@
 //! - **Validation and Normalization**: Provide data validation and
 //!   normalization functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 pub mod auditable;
 pub mod creatable;

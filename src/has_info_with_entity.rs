@@ -19,9 +19,6 @@
 
 //! Traits for entity-associated basic information retrieval functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use crate::{HasInfo, HasSpecificInfo, InfoWithEntity, WithEntity};
 
@@ -32,9 +29,6 @@ use crate::{HasInfo, HasSpecificInfo, InfoWithEntity, WithEntity};
 ///
 /// * `E` - The type of the associated entity
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait HasInfoWithEntity<E>:
     HasInfo + WithEntity<E> + HasSpecificInfo<InfoWithEntity<E>>
 where

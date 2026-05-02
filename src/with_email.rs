@@ -19,9 +19,6 @@
 
 //! Traits for email address property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has an email address property
 ///
@@ -58,9 +55,6 @@
 /// assert_eq!(contact.email(), "alice.new@example.com");
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithEmail {
     /// Gets the email address of the current object
     ///

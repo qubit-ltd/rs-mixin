@@ -19,9 +19,6 @@
 
 //! Traits for audit information recording functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use crate::{Creatable, Deletable, Modifiable};
 
@@ -89,9 +86,6 @@ use crate::{Creatable, Deletable, Modifiable};
 /// };
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Auditable: Creatable + Modifiable + Deletable {
     // This trait serves only as a marker trait, combining Creatable,
     // Modifiable, and Deletable

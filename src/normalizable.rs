@@ -19,18 +19,12 @@
 
 //! Traits for normalization functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class can be normalized
 ///
 /// This trait is used for normalizing objects, such as trimming whitespace
 /// from strings, unifying case, etc.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Normalizable {
     /// Normalizes this entity
     fn normalize(&mut self);

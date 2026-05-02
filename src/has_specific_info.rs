@@ -19,9 +19,6 @@
 
 //! Traits for specific information retrieval functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has specific information
 ///
@@ -29,9 +26,6 @@
 ///
 /// * `T` - The type of the information
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait HasSpecificInfo<T> {
     /// Gets the specific information of the current object
     ///

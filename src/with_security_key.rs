@@ -19,15 +19,9 @@
 
 //! Traits for security key property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a security key property
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithSecurityKey {
     /// Gets the security key of the current object
     ///

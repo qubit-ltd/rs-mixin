@@ -19,9 +19,6 @@
 
 //! Traits for basic information retrieval functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use crate::{HasSpecificInfo, Identifiable, Info, WithCode, WithName};
 
@@ -30,9 +27,6 @@ use crate::{HasSpecificInfo, Identifiable, Info, WithCode, WithName};
 /// This trait combines the `Identifiable`, `WithCode`, `WithName`, and
 /// `HasSpecificInfo<Info>` traits.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait HasInfo: Identifiable + WithCode + WithName + HasSpecificInfo<Info> {
     // This trait serves only as a marker trait, combining multiple basic
     // traits

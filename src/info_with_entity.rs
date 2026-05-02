@@ -19,9 +19,6 @@
 
 //! Basic information structure with entity association
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
@@ -35,9 +32,6 @@ use crate::{Deletable, Identifiable, Info, WithCode, WithEntity, WithName};
 ///
 /// * `E` - The type of the associated entity
 ///
-/// # Author
-///
-/// Haixing Hu
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct InfoWithEntity<E>
 where

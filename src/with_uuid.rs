@@ -19,16 +19,10 @@
 
 //! Traits for universally unique identifier property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a universally unique
 /// identifier (UUID) property
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithUuid {
     /// Gets the universally unique identifier of the current object
     ///

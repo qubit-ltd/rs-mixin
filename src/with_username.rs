@@ -19,18 +19,12 @@
 
 //! Traits for username property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a username property
 ///
 /// This trait provides access and setting functionality for the username
 /// of domain objects.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithUsername {
     /// Gets the username of the current object
     ///

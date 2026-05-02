@@ -19,9 +19,6 @@
 
 //! Traits for status property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use crate::Identifiable;
 
@@ -84,9 +81,6 @@ use crate::Identifiable;
 /// assert_eq!(order.status(), OrderStatus::Paid);
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithStatus<S>: Identifiable
 where
     S: Copy,

@@ -19,9 +19,6 @@
 
 //! Traits for mark deletion time recording functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use chrono::{DateTime, Utc};
 
@@ -61,9 +58,6 @@ use chrono::{DateTime, Utc};
 /// assert!(post.is_deleted());
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Deletable {
     /// Gets the mark deletion time of the current object
     ///

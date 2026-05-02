@@ -19,9 +19,6 @@
 
 //! Traits for maximum age functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use std::time::Duration;
 
@@ -29,9 +26,6 @@ use std::time::Duration;
 ///
 /// This trait is used to define the maximum validity period of data.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait DataWithMaxAge {
     /// Gets the maximum age of this data
     ///

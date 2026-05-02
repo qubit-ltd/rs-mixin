@@ -19,9 +19,6 @@
 
 //! Traits for unique identifier functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has an ID property
 ///
@@ -56,9 +53,6 @@
 /// assert_eq!(user.id(), Some(1));
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Identifiable {
     /// Gets the unique identifier of the current object
     ///

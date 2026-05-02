@@ -19,9 +19,6 @@
 
 //! Traits for code property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a code property
 ///
@@ -58,9 +55,6 @@
 /// assert_eq!(product.code(), "PROD002");
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithCode {
     /// Gets the code of the current object
     ///

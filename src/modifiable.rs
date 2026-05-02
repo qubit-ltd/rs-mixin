@@ -19,9 +19,6 @@
 
 //! Traits for last modification time recording functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use chrono::{DateTime, Utc};
 
@@ -64,9 +61,6 @@ use chrono::{DateTime, Utc};
 /// assert_eq!(doc.modify_time(), Some(now));
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Modifiable {
     /// Gets the last modification time of the current object
     ///

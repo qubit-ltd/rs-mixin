@@ -19,16 +19,10 @@
 
 //! Traits for device unique identifier property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a device unique identifier
 /// (UDID) property
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithUdid {
     /// Gets the device unique identifier of the current object
     ///

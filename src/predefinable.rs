@@ -19,9 +19,6 @@
 
 //! Traits for predefinition identification functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 /// A trait indicating that an entity class has a predefinition
 /// identification property
@@ -29,9 +26,6 @@
 /// This trait is used to identify whether an object is a system-predefined
 /// object.
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait Predefinable {
     /// Determines whether this object is a predefined object
     ///

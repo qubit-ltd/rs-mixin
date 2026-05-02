@@ -19,9 +19,6 @@
 
 //! Basic information structure
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
@@ -51,9 +48,6 @@ use crate::{Deletable, Emptyful, Identifiable, Normalizable, WithCode, WithName}
 /// assert_eq!(info.code, "CODE001");
 /// ```
 ///
-/// # Author
-///
-/// Haixing Hu
 #[derive(Debug, Clone, Default, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct Info {
     /// Unique identifier

@@ -19,17 +19,11 @@
 
 //! Traits for birthday property functionality
 //!
-//! # Author
-//!
-//! Haixing Hu
 
 use chrono::NaiveDate;
 
 /// A trait indicating that an entity class has a birthday property
 ///
-/// # Author
-///
-/// Haixing Hu
 pub trait WithBirthday {
     /// Gets the birthday of the current object
     ///
