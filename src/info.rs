@@ -10,10 +10,23 @@
 //! Basic information structure
 //!
 
-use chrono::{DateTime, Utc};
-use serde::{Deserialize, Serialize};
+use chrono::{
+    DateTime,
+    Utc,
+};
+use serde::{
+    Deserialize,
+    Serialize,
+};
 
-use crate::{Deletable, Emptyful, Identifiable, Normalizable, WithCode, WithName};
+use crate::{
+    Deletable,
+    Emptyful,
+    Identifiable,
+    Normalizable,
+    WithCode,
+    WithName,
+};
 
 /// Represents the basic information of a deletable object
 ///

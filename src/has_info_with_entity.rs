@@ -10,7 +10,12 @@
 //! Traits for entity-associated basic information retrieval functionality
 //!
 
-use crate::{HasInfo, HasSpecificInfo, InfoWithEntity, WithEntity};
+use crate::{
+    HasInfo,
+    HasSpecificInfo,
+    InfoWithEntity,
+    WithEntity,
+};
 
 /// A trait indicating that an entity class has basic information with
 /// entity association

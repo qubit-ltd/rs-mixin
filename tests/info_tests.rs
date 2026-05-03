@@ -8,7 +8,15 @@
  *
  ******************************************************************************/
 use chrono::Utc;
-use qubit_mixin::{Deletable, Emptyful, Identifiable, Info, Normalizable, WithCode, WithName};
+use qubit_mixin::{
+    Deletable,
+    Emptyful,
+    Identifiable,
+    Info,
+    Normalizable,
+    WithCode,
+    WithName,
+};
 
 #[test]
 fn test_info_new() {

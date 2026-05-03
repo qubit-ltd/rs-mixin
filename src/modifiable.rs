@@ -10,7 +10,10 @@
 //! Traits for last modification time recording functionality
 //!
 
-use chrono::{DateTime, Utc};
+use chrono::{
+    DateTime,
+    Utc,
+};
 
 /// A trait indicating that an entity class records the last modification
 /// time

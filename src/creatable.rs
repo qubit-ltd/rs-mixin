@@ -10,7 +10,10 @@
 //! Traits for creation time recording functionality
 //!
 
-use chrono::{DateTime, Utc};
+use chrono::{
+    DateTime,
+    Utc,
+};
 
 /// A trait indicating that an entity class records the creation time
 ///

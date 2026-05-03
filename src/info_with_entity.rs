@@ -10,10 +10,23 @@
 //! Basic information structure with entity association
 //!
 
-use chrono::{DateTime, Utc};
-use serde::{Deserialize, Serialize};
+use chrono::{
+    DateTime,
+    Utc,
+};
+use serde::{
+    Deserialize,
+    Serialize,
+};
 
-use crate::{Deletable, Identifiable, Info, WithCode, WithEntity, WithName};
+use crate::{
+    Deletable,
+    Identifiable,
+    Info,
+    WithCode,
+    WithEntity,
+    WithName,
+};
 
 /// Represents the basic information of a deletable object with entity
 /// association

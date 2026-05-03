@@ -10,7 +10,11 @@
 //! Traits for audit information recording functionality
 //!
 
-use crate::{Creatable, Deletable, Modifiable};
+use crate::{
+    Creatable,
+    Deletable,
+    Modifiable,
+};
 
 /// A trait indicating that an entity class has auditable properties
 ///

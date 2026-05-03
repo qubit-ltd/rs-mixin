@@ -7,9 +7,19 @@
  *    Licensed under the Apache License, Version 2.0.
  *
  ******************************************************************************/
-use chrono::{DateTime, Utc};
+use chrono::{
+    DateTime,
+    Utc,
+};
 use qubit_mixin::{
-    Auditable, Creatable, Deletable, Identifiable, Modifiable, WithCode, WithComment, WithEmail,
+    Auditable,
+    Creatable,
+    Deletable,
+    Identifiable,
+    Modifiable,
+    WithCode,
+    WithComment,
+    WithEmail,
     WithName,
 };
 

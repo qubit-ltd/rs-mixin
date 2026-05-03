@@ -10,7 +10,13 @@
 //! Traits for basic information retrieval functionality
 //!
 
-use crate::{HasSpecificInfo, Identifiable, Info, WithCode, WithName};
+use crate::{
+    HasSpecificInfo,
+    Identifiable,
+    Info,
+    WithCode,
+    WithName,
+};
 
 /// A trait indicating that an entity class has basic information
 ///

@@ -8,7 +8,14 @@
  *
  ******************************************************************************/
 use chrono::Utc;
-use qubit_mixin::{Deletable, Identifiable, InfoWithEntity, WithCode, WithEntity, WithName};
+use qubit_mixin::{
+    Deletable,
+    Identifiable,
+    InfoWithEntity,
+    WithCode,
+    WithEntity,
+    WithName,
+};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct Payload {

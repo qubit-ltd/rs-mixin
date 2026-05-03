@@ -7,14 +7,39 @@
  *    Licensed under the Apache License, Version 2.0.
  *
  ******************************************************************************/
-use chrono::{DateTime, NaiveDate, Utc};
+use chrono::{
+    DateTime,
+    NaiveDate,
+    Utc,
+};
 use std::time::Duration;
 
 use qubit_mixin::{
-    Auditable, Creatable, DataWithMaxAge, Deletable, Desensitizable, HasInfo, HasInfoWithEntity,
-    HasSpecificInfo, Identifiable, Modifiable, Predefinable, Validatable, WithBirthday, WithCode,
-    WithEntity, WithIndex, WithKey, WithName, WithPassword, WithSecurityKey, WithStatus, WithUdid,
-    WithUsername, WithUuid, WithVisibility,
+    Auditable,
+    Creatable,
+    DataWithMaxAge,
+    Deletable,
+    Desensitizable,
+    HasInfo,
+    HasInfoWithEntity,
+    HasSpecificInfo,
+    Identifiable,
+    Modifiable,
+    Predefinable,
+    Validatable,
+    WithBirthday,
+    WithCode,
+    WithEntity,
+    WithIndex,
+    WithKey,
+    WithName,
+    WithPassword,
+    WithSecurityKey,
+    WithStatus,
+    WithUdid,
+    WithUsername,
+    WithUuid,
+    WithVisibility,
 };
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
