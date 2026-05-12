@@ -1,6 +1,6 @@
 # qubit-mixin
 
-[![CircleCI](https://circleci.com/gh/qubit-ltd/rs-mixin.svg?style=shield)](https://circleci.com/gh/qubit-ltd/rs-mixin)
+[![Rust CI](https://github.com/qubit-ltd/rs-mixin/actions/workflows/ci.yml/badge.svg)](https://github.com/qubit-ltd/rs-mixin/actions/workflows/ci.yml)
 [![Coverage Status](https://coveralls.io/repos/github/qubit-ltd/rs-mixin/badge.svg?branch=main)](https://coveralls.io/github/qubit-ltd/rs-mixin?branch=main)
 [![Crates.io](https://img.shields.io/crates/v/qubit-mixin.svg?color=blue)](https://crates.io/crates/qubit-mixin)
 [![Rust](https://img.shields.io/badge/rust-1.70+-blue.svg?logo=rust)](https://www.rust-lang.org)
