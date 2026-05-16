@@ -28,7 +28,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-qubit-mixin = "0.1"
+qubit-mixin = "0.2"
 ```
 
 On crates.io the package is **`qubit-mixin`**; in Rust code, import it as **`qubit_mixin`** (hyphens map to underscores in the crate root). If you used the former **`prism3-mixin`** / **`prism3_mixin`**, switch the dependency key to `qubit-mixin` and update `use` paths to `qubit_mixin`.

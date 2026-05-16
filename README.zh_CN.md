@@ -28,7 +28,7 @@
 
 ```toml
 [dependencies]
-qubit-mixin = "0.1"
+qubit-mixin = "0.2"
 ```
 
 crates.io 上的包名为 **`qubit-mixin`**，在源码中请使用 **`qubit_mixin`** 作为 crate 根路径（连字符对应为下划线）。若曾使用 **`prism3-mixin`** / **`prism3_mixin`**，请将依赖改为 `qubit-mixin`，并把 `use prism3_mixin::...` 改为 `use qubit_mixin::...`。
