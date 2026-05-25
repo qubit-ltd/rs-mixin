@@ -74,13 +74,7 @@ fn test_info_with_entity_default() {
 
 #[test]
 fn test_info_with_entity_clone_partial_eq() {
-    let row = InfoWithEntity::new(
-        None,
-        "x".to_string(),
-        "y".to_string(),
-        None,
-        Some(Payload { value: 1 }),
-    );
+    let row = InfoWithEntity::new(None, "x".to_string(), "y".to_string(), None, Some(Payload { value: 1 }));
     let row2 = row.clone();
     assert_eq!(row, row2);
 }

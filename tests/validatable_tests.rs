@@ -28,11 +28,5 @@ fn test_validatable_returns_domain_error() {
         }
         .validate()
     );
-    assert_eq!(
-        Err(Error("name")),
-        Row {
-            name: String::new()
-        }
-        .validate()
-    );
+    assert_eq!(Err(Error("name")), Row { name: String::new() }.validate());
 }

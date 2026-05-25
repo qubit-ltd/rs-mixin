@@ -24,8 +24,7 @@ use crate::{
 ///
 /// * `E` - The type of the associated entity
 ///
-pub trait HasInfoWithEntity<E>:
-    HasInfo + WithEntity<E> + HasSpecificInfo<InfoWithEntity<E>>
+pub trait HasInfoWithEntity<E>: HasInfo + WithEntity<E> + HasSpecificInfo<InfoWithEntity<E>>
 where
     E: Clone,
 {

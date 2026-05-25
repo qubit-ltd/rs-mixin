@@ -94,12 +94,7 @@ fn test_info_is_empty() {
 
 #[test]
 fn test_info_normalize() {
-    let mut info = Info::new(
-        Some(1),
-        "  CODE  ".to_string(),
-        "  Name  ".to_string(),
-        None,
-    );
+    let mut info = Info::new(Some(1), "  CODE  ".to_string(), "  Name  ".to_string(), None);
 
     info.normalize();
     assert_eq!(info.code(), "CODE");

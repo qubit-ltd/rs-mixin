@@ -80,12 +80,7 @@ impl Info {
     /// # Returns
     ///
     /// The newly created `Info` object
-    pub fn new(
-        id: Option<i64>,
-        code: String,
-        name: String,
-        delete_time: Option<DateTime<Utc>>,
-    ) -> Self {
+    pub fn new(id: Option<i64>, code: String, name: String, delete_time: Option<DateTime<Utc>>) -> Self {
         Self {
             id,
             code,
@@ -194,10 +189,7 @@ impl Deletable for Info {
 
 impl Emptyful for Info {
     fn is_empty(&self) -> bool {
-        self.id.is_none()
-            && self.code.is_empty()
-            && self.name.is_empty()
-            && self.delete_time.is_none()
+        self.id.is_none() && self.code.is_empty() && self.name.is_empty() && self.delete_time.is_none()
     }
 }
 

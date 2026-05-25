@@ -15,9 +15,7 @@ impl WithKey for Row {
 
 #[test]
 fn test_with_key_gets_and_sets_key() {
-    let mut row = Row {
-        key: "k1".to_owned(),
-    };
+    let mut row = Row { key: "k1".to_owned() };
     row.set_key("k2");
     assert_eq!(row.key(), "k2");
 }
