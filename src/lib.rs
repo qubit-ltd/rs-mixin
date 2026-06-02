@@ -79,7 +79,10 @@ pub use modifiable::Modifiable;
 pub use normalizable::Normalizable;
 pub use predefinable::Predefinable;
 pub use validatable::Validatable;
-pub use with_birthday::WithBirthday;
+pub use with_birthday::{
+    DEFAULT_ADULT_AGE,
+    WithBirthday,
+};
 pub use with_code::WithCode;
 pub use with_comment::WithComment;
 pub use with_email::WithEmail;

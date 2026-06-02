@@ -17,4 +17,19 @@
 pub trait Desensitizable {
     /// Desensitizes the sensitive information of this entity
     fn desensitize(&mut self);
+
+    /// Returns a desensitized clone of this entity
+    ///
+    /// # Returns
+    ///
+    /// A cloned value after applying [`desensitize`](Self::desensitize) to
+    /// the clone. The original value is not modified.
+    fn desensitized(&self) -> Self
+    where
+        Self: Clone + Sized,
+    {
+        let mut result = self.clone();
+        result.desensitize();
+        result
+    }
 }

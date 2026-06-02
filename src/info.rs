@@ -51,7 +51,7 @@ use crate::{
 /// assert_eq!(info.code, "CODE001");
 /// ```
 ///
-#[derive(Debug, Clone, Default, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Default, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct Info {
     /// Unique identifier
     pub id: Option<i64>,
@@ -144,6 +144,89 @@ impl Info {
             name,
             delete_time: None,
         }
+    }
+
+    /// Creates an `Info` snapshot from basic accessor traits
+    ///
+    /// # Parameters
+    ///
+    /// * `source` - The source object providing ID, code, and name
+    ///
+    /// # Returns
+    ///
+    /// An `Info` value copied from `source`. The deletion time is set to
+    /// `None` because the source is not required to implement
+    /// [`Deletable`].
+    pub fn from_basic<T>(source: &T) -> Self
+    where
+        T: Identifiable + WithCode + WithName + ?Sized,
+    {
+        Self {
+            id: source.id(),
+            code: source.code().to_owned(),
+            name: source.name().to_owned(),
+            delete_time: None,
+        }
+    }
+
+    /// Creates an `Info` snapshot from a deletable object
+    ///
+    /// # Parameters
+    ///
+    /// * `source` - The source object providing ID, code, name, and deletion
+    ///   time
+    ///
+    /// # Returns
+    ///
+    /// An `Info` value copied from `source`, including the deletion time.
+    pub fn from_deletable<T>(source: &T) -> Self
+    where
+        T: Identifiable + WithCode + WithName + Deletable + ?Sized,
+    {
+        Self {
+            id: source.id(),
+            code: source.code().to_owned(),
+            name: source.name().to_owned(),
+            delete_time: source.delete_time(),
+        }
+    }
+
+    /// Copies the basic fields into a target object
+    ///
+    /// # Parameters
+    ///
+    /// * `target` - The target object receiving the ID, code, and name
+    pub fn apply_to<T>(&self, target: &mut T)
+    where
+        T: Identifiable + WithCode + WithName + ?Sized,
+    {
+        target.set_id(self.id);
+        target.set_code(&self.code);
+        target.set_name(&self.name);
+    }
+
+    /// Copies all fields into a deletable target object
+    ///
+    /// # Parameters
+    ///
+    /// * `target` - The target object receiving the ID, code, name, and
+    ///   deletion time
+    pub fn apply_to_deletable<T>(&self, target: &mut T)
+    where
+        T: Identifiable + WithCode + WithName + Deletable + ?Sized,
+    {
+        self.apply_to(target);
+        target.set_delete_time(self.delete_time);
+    }
+
+    /// Reports whether all business fields are populated
+    ///
+    /// # Returns
+    ///
+    /// `true` when the ID and deletion time are present and the code and
+    /// name are non-empty.
+    pub fn is_complete(&self) -> bool {
+        self.id.is_some() && !self.code.is_empty() && !self.name.is_empty() && self.delete_time.is_some()
     }
 }
 
