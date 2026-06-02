@@ -54,7 +54,7 @@ enum Vis {
     Private,
 }
 
-struct KitchenSink<E: Clone> {
+struct KitchenSink {
     id: Option<i64>,
     status: Status,
     visibility: Vis,
@@ -73,10 +73,10 @@ struct KitchenSink<E: Clone> {
     modify_time: Option<DateTime<Utc>>,
     delete_time: Option<DateTime<Utc>>,
     core: qubit_mixin::Info,
-    entity: Option<E>,
+    entity: Option<String>,
 }
 
-impl<E: Clone> Identifiable for KitchenSink<E> {
+impl Identifiable for KitchenSink {
     fn id(&self) -> Option<i64> {
         self.id
     }
@@ -86,7 +86,7 @@ impl<E: Clone> Identifiable for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithStatus<Status> for KitchenSink<E> {
+impl WithStatus<Status> for KitchenSink {
     fn status(&self) -> Status {
         self.status
     }
@@ -96,7 +96,7 @@ impl<E: Clone> WithStatus<Status> for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithVisibility<Vis> for KitchenSink<E> {
+impl WithVisibility<Vis> for KitchenSink {
     fn visibility(&self) -> Vis {
         self.visibility
     }
@@ -106,7 +106,7 @@ impl<E: Clone> WithVisibility<Vis> for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithIndex for KitchenSink<E> {
+impl WithIndex for KitchenSink {
     fn index(&self) -> i32 {
         self.index
     }
@@ -116,7 +116,7 @@ impl<E: Clone> WithIndex for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithKey for KitchenSink<E> {
+impl WithKey for KitchenSink {
     fn key(&self) -> &str {
         &self.key
     }
@@ -126,7 +126,7 @@ impl<E: Clone> WithKey for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithPassword for KitchenSink<E> {
+impl WithPassword for KitchenSink {
     fn password(&self) -> &str {
         &self.password
     }
@@ -136,7 +136,7 @@ impl<E: Clone> WithPassword for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithSecurityKey for KitchenSink<E> {
+impl WithSecurityKey for KitchenSink {
     fn security_key(&self) -> &str {
         &self.security_key
     }
@@ -146,7 +146,7 @@ impl<E: Clone> WithSecurityKey for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithUdid for KitchenSink<E> {
+impl WithUdid for KitchenSink {
     fn udid(&self) -> &str {
         &self.udid
     }
@@ -156,7 +156,7 @@ impl<E: Clone> WithUdid for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithUsername for KitchenSink<E> {
+impl WithUsername for KitchenSink {
     fn username(&self) -> &str {
         &self.username
     }
@@ -166,7 +166,7 @@ impl<E: Clone> WithUsername for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithUuid for KitchenSink<E> {
+impl WithUuid for KitchenSink {
     fn uuid(&self) -> &str {
         &self.uuid
     }
@@ -176,7 +176,7 @@ impl<E: Clone> WithUuid for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithBirthday for KitchenSink<E> {
+impl WithBirthday for KitchenSink {
     fn birthday(&self) -> Option<NaiveDate> {
         self.birthday
     }
@@ -186,7 +186,7 @@ impl<E: Clone> WithBirthday for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> Predefinable for KitchenSink<E> {
+impl Predefinable for KitchenSink {
     fn is_predefined(&self) -> bool {
         self.predefined
     }
@@ -196,7 +196,7 @@ impl<E: Clone> Predefinable for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> DataWithMaxAge for KitchenSink<E> {
+impl DataWithMaxAge for KitchenSink {
     fn max_age(&self) -> Duration {
         self.max_age
     }
@@ -206,7 +206,7 @@ impl<E: Clone> DataWithMaxAge for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> Creatable for KitchenSink<E> {
+impl Creatable for KitchenSink {
     fn create_time(&self) -> DateTime<Utc> {
         self.create_time
     }
@@ -216,7 +216,7 @@ impl<E: Clone> Creatable for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> Modifiable for KitchenSink<E> {
+impl Modifiable for KitchenSink {
     fn modify_time(&self) -> Option<DateTime<Utc>> {
         self.modify_time
     }
@@ -226,7 +226,7 @@ impl<E: Clone> Modifiable for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> Deletable for KitchenSink<E> {
+impl Deletable for KitchenSink {
     fn delete_time(&self) -> Option<DateTime<Utc>> {
         self.delete_time
     }
@@ -236,9 +236,9 @@ impl<E: Clone> Deletable for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> Auditable for KitchenSink<E> {}
+impl Auditable for KitchenSink {}
 
-impl<E: Clone> Desensitizable for KitchenSink<E> {
+impl Desensitizable for KitchenSink {
     fn desensitize(&mut self) {
         self.sensitive.clear();
     }
@@ -247,7 +247,7 @@ impl<E: Clone> Desensitizable for KitchenSink<E> {
 #[derive(Debug, PartialEq, Eq)]
 struct ValidationError(&'static str);
 
-impl<E: Clone> Validatable for KitchenSink<E> {
+impl Validatable for KitchenSink {
     type Error = ValidationError;
 
     fn validate(&self) -> Result<(), Self::Error> {
@@ -258,7 +258,7 @@ impl<E: Clone> Validatable for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> qubit_mixin::WithCode for KitchenSink<E> {
+impl qubit_mixin::WithCode for KitchenSink {
     fn code(&self) -> &str {
         self.core.code()
     }
@@ -268,7 +268,7 @@ impl<E: Clone> qubit_mixin::WithCode for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> qubit_mixin::WithName for KitchenSink<E> {
+impl qubit_mixin::WithName for KitchenSink {
     fn name(&self) -> &str {
         self.core.name()
     }
@@ -278,7 +278,7 @@ impl<E: Clone> qubit_mixin::WithName for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> HasSpecificInfo<qubit_mixin::Info> for KitchenSink<E> {
+impl HasSpecificInfo<qubit_mixin::Info> for KitchenSink {
     fn info(&self) -> qubit_mixin::Info {
         self.core.clone()
     }
@@ -288,18 +288,18 @@ impl<E: Clone> HasSpecificInfo<qubit_mixin::Info> for KitchenSink<E> {
     }
 }
 
-impl<E: Clone> WithEntity<E> for KitchenSink<E> {
-    fn entity(&self) -> Option<&E> {
-        self.entity.as_ref()
+impl WithEntity for KitchenSink {
+    fn entity(&self) -> Option<&str> {
+        self.entity.as_deref()
     }
 
-    fn set_entity(&mut self, entity: Option<E>) {
-        self.entity = entity;
+    fn set_entity(&mut self, entity: Option<&str>) {
+        self.entity = entity.map(str::to_owned);
     }
 }
 
-impl<E: Clone> HasSpecificInfo<qubit_mixin::InfoWithEntity<E>> for KitchenSink<E> {
-    fn info(&self) -> qubit_mixin::InfoWithEntity<E> {
+impl HasSpecificInfo<qubit_mixin::InfoWithEntity> for KitchenSink {
+    fn info(&self) -> qubit_mixin::InfoWithEntity {
         qubit_mixin::InfoWithEntity::new(
             self.core.id(),
             self.core.code().to_string(),
@@ -309,20 +309,20 @@ impl<E: Clone> HasSpecificInfo<qubit_mixin::InfoWithEntity<E>> for KitchenSink<E
         )
     }
 
-    fn set_info(&mut self, info: qubit_mixin::InfoWithEntity<E>) {
+    fn set_info(&mut self, info: qubit_mixin::InfoWithEntity) {
         self.core.set_id(info.id());
         self.core.set_code(info.code());
         self.core.set_name(info.name());
         self.core.set_delete_time(info.delete_time());
-        self.entity = info.entity().cloned();
+        self.entity = info.entity().map(str::to_owned);
     }
 }
 
-impl<E: Clone> HasInfo for KitchenSink<E> {}
+impl HasInfo for KitchenSink {}
 
-impl<E: Clone> HasInfoWithEntity<E> for KitchenSink<E> {}
+impl HasInfoWithEntity for KitchenSink {}
 
-fn sample_sink<E: Clone>(entity: Option<E>) -> KitchenSink<E> {
+fn sample_sink(entity: Option<&str>) -> KitchenSink {
     KitchenSink {
         id: Some(1),
         status: Status::On,
@@ -342,13 +342,13 @@ fn sample_sink<E: Clone>(entity: Option<E>) -> KitchenSink<E> {
         modify_time: None,
         delete_time: None,
         core: qubit_mixin::Info::of_id(42),
-        entity,
+        entity: entity.map(str::to_owned),
     }
 }
 
 #[test]
 fn test_kitchen_sink_traits() {
-    let mut row = sample_sink(Some(100i32));
+    let mut row = sample_sink(Some("ORGANIZATION"));
 
     assert_eq!(row.status(), Status::On);
     row.set_status(Status::Off);
@@ -405,12 +405,12 @@ fn test_kitchen_sink_traits() {
 
     assert!(row.validate().is_ok());
 
-    let mut bad = sample_sink::<i32>(None);
+    let mut bad = sample_sink(None);
     bad.set_username("");
     assert_eq!(bad.validate(), Err(ValidationError("username")));
 
     let full: qubit_mixin::Info = HasSpecificInfo::info(&row);
     assert_eq!(full.id(), Some(42));
-    let full_we: qubit_mixin::InfoWithEntity<i32> = HasSpecificInfo::info(&row);
-    assert_eq!(full_we.entity(), Some(&100));
+    let full_we: qubit_mixin::InfoWithEntity = HasSpecificInfo::info(&row);
+    assert_eq!(full_we.entity(), Some("ORGANIZATION"));
 }

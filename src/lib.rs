@@ -25,7 +25,7 @@
 //!   states
 //! - **User Information Traits**: Provide user-related information such as
 //!   username, email, and password
-//! - **Entity Association Traits**: Manage entity associations
+//! - **Entity Discriminator Traits**: Manage entity discriminator values
 //! - **Validation and Normalization**: Provide data validation and
 //!   normalization functionality
 //!

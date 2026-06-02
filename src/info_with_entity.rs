@@ -7,7 +7,7 @@
  *    Licensed under the Apache License, Version 2.0.
  *
  ******************************************************************************/
-//! Basic information structure with entity association
+//! Basic information structure with an entity discriminator
 //!
 
 use chrono::{
@@ -21,37 +21,29 @@ use serde::{
 
 use crate::{
     Deletable,
+    Emptyful,
     Identifiable,
     Info,
+    Normalizable,
     WithCode,
     WithEntity,
     WithName,
 };
 
-/// Represents the basic information of a deletable object with entity
-/// association
+/// Represents the basic information of a deletable object with an entity
+/// discriminator
 ///
-/// # Type Parameters
-///
-/// * `E` - The type of the associated entity
-///
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-pub struct InfoWithEntity<E>
-where
-    E: Clone,
-{
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize, Default)]
+pub struct InfoWithEntity {
     /// Basic information
     #[serde(flatten)]
     pub info: Info,
 
-    /// Associated entity
-    pub entity: Option<E>,
+    /// Associated entity name
+    pub entity: Option<String>,
 }
 
-impl<E> InfoWithEntity<E>
-where
-    E: Clone,
-{
+impl InfoWithEntity {
     /// Creates a new `InfoWithEntity` object
     ///
     /// # Parameters
@@ -60,7 +52,7 @@ where
     /// * `code` - Code
     /// * `name` - Name
     /// * `delete_time` - Mark deletion time
-    /// * `entity` - Associated entity
+    /// * `entity` - Associated entity name
     ///
     /// # Returns
     ///
@@ -70,31 +62,49 @@ where
         code: String,
         name: String,
         delete_time: Option<DateTime<Utc>>,
-        entity: Option<E>,
+        entity: Option<String>,
     ) -> Self {
         Self {
             info: Info::new(id, code, name, delete_time),
             entity,
         }
     }
-}
 
-impl<E> Default for InfoWithEntity<E>
-where
-    E: Clone,
-{
-    fn default() -> Self {
-        Self {
-            info: Info::default(),
-            entity: None,
-        }
+    /// Creates a new value from an existing [`Info`] and optional entity name
+    ///
+    /// # Parameters
+    ///
+    /// * `info` - The embedded basic information
+    /// * `entity` - The entity discriminator, or `None` if not associated
+    ///
+    /// # Returns
+    ///
+    /// A new `InfoWithEntity` value preserving `info` unchanged.
+    pub fn from_info(info: Info, entity: Option<String>) -> Self {
+        Self { info, entity }
+    }
+
+    /// Consumes this value and returns the embedded [`Info`]
+    ///
+    /// # Returns
+    ///
+    /// The embedded basic information.
+    pub fn into_info(self) -> Info {
+        self.info
+    }
+
+    /// Reports whether all basic information and the entity are populated
+    ///
+    /// # Returns
+    ///
+    /// `true` when [`Info::is_complete`] is `true` and the entity is
+    /// present.
+    pub fn is_complete(&self) -> bool {
+        self.info.is_complete() && self.entity.is_some()
     }
 }
 
-impl<E> Identifiable for InfoWithEntity<E>
-where
-    E: Clone,
-{
+impl Identifiable for InfoWithEntity {
     fn id(&self) -> Option<i64> {
         self.info.id()
     }
@@ -104,10 +114,7 @@ where
     }
 }
 
-impl<E> WithCode for InfoWithEntity<E>
-where
-    E: Clone,
-{
+impl WithCode for InfoWithEntity {
     fn code(&self) -> &str {
         self.info.code()
     }
@@ -117,10 +124,7 @@ where
     }
 }
 
-impl<E> WithName for InfoWithEntity<E>
-where
-    E: Clone,
-{
+impl WithName for InfoWithEntity {
     fn name(&self) -> &str {
         self.info.name()
     }
@@ -130,10 +134,7 @@ where
     }
 }
 
-impl<E> Deletable for InfoWithEntity<E>
-where
-    E: Clone,
-{
+impl Deletable for InfoWithEntity {
     fn delete_time(&self) -> Option<DateTime<Utc>> {
         self.info.delete_time()
     }
@@ -143,15 +144,36 @@ where
     }
 }
 
-impl<E> WithEntity<E> for InfoWithEntity<E>
-where
-    E: Clone,
-{
-    fn entity(&self) -> Option<&E> {
-        self.entity.as_ref()
+impl WithEntity for InfoWithEntity {
+    fn entity(&self) -> Option<&str> {
+        self.entity.as_deref()
     }
 
-    fn set_entity(&mut self, entity: Option<E>) {
-        self.entity = entity;
+    fn set_entity(&mut self, entity: Option<&str>) {
+        self.entity = entity.map(str::to_owned);
+    }
+}
+
+impl Emptyful for InfoWithEntity {
+    fn is_empty(&self) -> bool {
+        self.info.is_empty() && self.entity.is_none()
+    }
+}
+
+impl Normalizable for InfoWithEntity {
+    fn normalize(&mut self) {
+        self.info.normalize();
+    }
+}
+
+impl From<InfoWithEntity> for Info {
+    fn from(value: InfoWithEntity) -> Self {
+        value.info
+    }
+}
+
+impl From<Info> for InfoWithEntity {
+    fn from(info: Info) -> Self {
+        Self { info, entity: None }
     }
 }

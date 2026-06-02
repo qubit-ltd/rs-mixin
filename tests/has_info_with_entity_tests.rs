@@ -11,14 +11,9 @@ use qubit_mixin::{
     WithName,
 };
 
-#[derive(Clone, Debug, PartialEq, Eq)]
-struct Payload {
-    value: i32,
-}
-
 struct Row {
     info: Info,
-    entity: Option<Payload>,
+    entity: Option<String>,
 }
 
 impl Identifiable for Row {
@@ -53,16 +48,17 @@ impl HasSpecificInfo<Info> for Row {
         self.info = info;
     }
 }
-impl WithEntity<Payload> for Row {
-    fn entity(&self) -> Option<&Payload> {
-        self.entity.as_ref()
+impl WithEntity for Row {
+    fn entity(&self) -> Option<&str> {
+        self.entity.as_deref()
     }
-    fn set_entity(&mut self, entity: Option<Payload>) {
-        self.entity = entity;
+
+    fn set_entity(&mut self, entity: Option<&str>) {
+        self.entity = entity.map(str::to_owned);
     }
 }
-impl HasSpecificInfo<InfoWithEntity<Payload>> for Row {
-    fn info(&self) -> InfoWithEntity<Payload> {
+impl HasSpecificInfo<InfoWithEntity> for Row {
+    fn info(&self) -> InfoWithEntity {
         InfoWithEntity::new(
             self.info.id(),
             self.info.code().to_owned(),
@@ -71,28 +67,29 @@ impl HasSpecificInfo<InfoWithEntity<Payload>> for Row {
             self.entity.clone(),
         )
     }
-    fn set_info(&mut self, info: InfoWithEntity<Payload>) {
+
+    fn set_info(&mut self, info: InfoWithEntity) {
         self.info.set_id(info.id());
         self.info.set_code(info.code());
         self.info.set_name(info.name());
         self.info.set_delete_time(info.delete_time());
-        self.entity = info.entity().cloned();
+        self.entity = info.entity().map(str::to_owned);
     }
 }
 impl HasInfo for Row {}
-impl HasInfoWithEntity<Payload> for Row {}
+impl HasInfoWithEntity for Row {}
 
-fn assert_has_entity<T: HasInfoWithEntity<Payload>>(row: &T) {
-    assert_eq!(Some(&Payload { value: 9 }), row.entity());
+fn assert_has_entity<T: HasInfoWithEntity>(row: &T) {
+    assert_eq!(Some("ORGANIZATION"), row.entity());
 }
 
 #[test]
 fn test_has_info_with_entity_combines_basic_info_and_entity_accessors() {
     let row = Row {
         info: Info::new(Some(3), "C".to_owned(), "N".to_owned(), None),
-        entity: Some(Payload { value: 9 }),
+        entity: Some("ORGANIZATION".to_owned()),
     };
     assert_has_entity(&row);
-    let snapshot: InfoWithEntity<Payload> = HasSpecificInfo::info(&row);
-    assert_eq!(Some(&Payload { value: 9 }), snapshot.entity());
+    let snapshot: InfoWithEntity = HasSpecificInfo::info(&row);
+    assert_eq!(Some("ORGANIZATION"), snapshot.entity());
 }

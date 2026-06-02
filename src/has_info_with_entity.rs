@@ -7,7 +7,7 @@
  *    Licensed under the Apache License, Version 2.0.
  *
  ******************************************************************************/
-//! Traits for entity-associated basic information retrieval functionality
+//! Traits for entity-discriminated basic information retrieval functionality
 //!
 
 use crate::{
@@ -17,17 +17,10 @@ use crate::{
     WithEntity,
 };
 
-/// A trait indicating that an entity class has basic information with
-/// entity association
+/// A trait indicating that an entity class has basic information with an
+/// entity discriminator
 ///
-/// # Type Parameters
-///
-/// * `E` - The type of the associated entity
-///
-pub trait HasInfoWithEntity<E>: HasInfo + WithEntity<E> + HasSpecificInfo<InfoWithEntity<E>>
-where
-    E: Clone,
-{
+pub trait HasInfoWithEntity: HasInfo + WithEntity + HasSpecificInfo<InfoWithEntity> {
     // This trait serves only as a marker trait, combining HasInfo,
     // WithEntity, and HasSpecificInfo
 }
