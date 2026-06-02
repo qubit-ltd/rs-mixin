@@ -19,7 +19,7 @@
 - **标识符特质**：提供 ID、代码、名称等标识信息
 - **状态管理特质**：管理状态、可见性等状态信息
 - **用户信息特质**：提供用户名、邮箱、密码等用户相关信息
-- **实体关联特质**：管理实体关联关系
+- **实体标识特质**：管理实体判别字段
 - **验证与规范化**：提供数据验证和规范化功能
 
 ## 安装
@@ -136,7 +136,7 @@ assert!(!product.is_deleted());
 - `WithEmail`: 提供电子邮件属性
 - `WithUsername`: 提供用户名属性
 - `WithPassword`: 提供密码属性
-- `WithBirthday`: 提供生日属性
+- `WithBirthday`: 提供生日属性、周岁计算和成年判断
 - `WithIndex`: 提供索引属性
 - `WithKey`: 提供键属性
 - `WithSecurityKey`: 提供安全密钥属性
@@ -144,7 +144,7 @@ assert!(!product.is_deleted());
 - `WithUuid`: 提供通用唯一标识符
 - `WithStatus`: 提供状态属性
 - `WithVisibility`: 提供可见性属性
-- `WithEntity`: 提供实体关联
+- `WithEntity`: 提供实体标识访问
 
 ### 时间戳 Trait
 
@@ -159,19 +159,19 @@ assert!(!product.is_deleted());
 - `Normalizable`: 提供数据规范化功能
 - `Predefinable`: 标识对象是否为预定义对象
 - `Validatable`: 提供数据验证功能
-- `Desensitizable`: 提供敏感数据脱敏
+- `Desensitizable`: 提供敏感数据脱敏和脱敏克隆
 - `DataWithMaxAge`: 定义数据的最大有效期
 
 ### 信息 Trait
 
 - `HasSpecificInfo<T>`: 提供特定信息访问
 - `HasInfo`: 提供基本信息访问
-- `HasInfoWithEntity<E>`: 提供带实体关联的基本信息访问
+- `HasInfoWithEntity`: 提供带实体标识的基本信息访问
 
 ### 数据结构
 
-- `Info`: 基本信息结构（ID、代码、名称、删除时间）
-- `InfoWithEntity<E>`: 带实体关联的基本信息
+- `Info`: 基本信息结构（ID、代码、名称、删除时间），支持完整性判断、排序和基于 trait 的复制辅助方法
+- `InfoWithEntity`: 带实体标识的基本信息，支持与 `Info` 相互转换
 
 ## 许可证
 
@@ -180,4 +180,3 @@ assert!(!product.is_deleted());
 ## 作者
 
 胡海星
-

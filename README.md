@@ -19,7 +19,7 @@ Trait mixins for domain objects, providing common properties and behaviors.
 - **Identifier Traits**: Provide ID, code, name and other identification information
 - **State Management Traits**: Manage status, visibility and other states
 - **User Information Traits**: Provide username, email, password and other user-related information
-- **Entity Association Traits**: Manage entity relationships
+- **Entity Discriminator Traits**: Manage entity discriminator values
 - **Validation & Normalization**: Provide data validation and normalization functionality
 
 ## Installation
@@ -136,7 +136,7 @@ assert!(!product.is_deleted());
 - `WithEmail`: Provides email property
 - `WithUsername`: Provides username property
 - `WithPassword`: Provides password property
-- `WithBirthday`: Provides birthday property
+- `WithBirthday`: Provides birthday property, age calculation, and adult checks
 - `WithIndex`: Provides index property
 - `WithKey`: Provides key property
 - `WithSecurityKey`: Provides security key property
@@ -144,7 +144,7 @@ assert!(!product.is_deleted());
 - `WithUuid`: Provides universally unique identifier
 - `WithStatus`: Provides status property
 - `WithVisibility`: Provides visibility property
-- `WithEntity`: Provides entity association
+- `WithEntity`: Provides entity discriminator access
 
 ### Timestamp Traits
 
@@ -159,19 +159,19 @@ assert!(!product.is_deleted());
 - `Normalizable`: Provides data normalization functionality
 - `Predefinable`: Indicates whether object is predefined
 - `Validatable`: Provides data validation functionality
-- `Desensitizable`: Provides sensitive data desensitization
+- `Desensitizable`: Provides sensitive data desensitization and desensitized clones
 - `DataWithMaxAge`: Defines maximum age for data
 
 ### Information Traits
 
 - `HasSpecificInfo<T>`: Provides specific information access
 - `HasInfo`: Provides basic information access
-- `HasInfoWithEntity<E>`: Provides basic information with entity association
+- `HasInfoWithEntity`: Provides basic information with entity discriminator access
 
 ### Data Structures
 
-- `Info`: Basic information structure (ID, code, name, delete_time)
-- `InfoWithEntity<E>`: Basic information with entity association
+- `Info`: Basic information structure (ID, code, name, delete_time), with completeness checks, ordering, and trait-based copy helpers
+- `InfoWithEntity`: Basic information with entity discriminator, including conversion to and from `Info`
 
 ## License
 
@@ -180,4 +180,3 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ## Author
 
 Haixing Hu
-
