@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for mark deletion time recording functionality
-//!
 
 use chrono::{
     DateTime,
@@ -50,7 +47,6 @@ use chrono::{
 /// post.set_delete_time(Some(Utc::now()));
 /// assert!(post.is_deleted());
 /// ```
-///
 pub trait Deletable {
     /// Gets the mark deletion time of the current object
     ///
@@ -64,8 +60,8 @@ pub trait Deletable {
     ///
     /// # Parameters
     ///
-    /// * `time` - The new mark deletion time to be set, `None` indicates
-    ///   that the object has not been marked as deleted
+    /// * `time` - The new mark deletion time to be set, `None` indicates that
+    ///   the object has not been marked as deleted
     fn set_delete_time(&mut self, time: Option<DateTime<Utc>>);
 
     /// Determines whether this object has been marked as deleted

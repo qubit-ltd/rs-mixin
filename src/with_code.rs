@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for code property functionality
-//!
 
 /// A trait indicating that an entity class has a code property
 ///
@@ -44,7 +41,6 @@
 /// product.set_code("PROD002");
 /// assert_eq!(product.code(), "PROD002");
 /// ```
-///
 pub trait WithCode {
     /// Gets the code of the current object
     ///

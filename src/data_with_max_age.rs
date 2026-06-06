@@ -1,21 +1,17 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for maximum age functionality
-//!
 
 use std::time::Duration;
 
 /// A trait indicating that data has a maximum age
 ///
 /// This trait is used to define the maximum validity period of data.
-///
 pub trait DataWithMaxAge {
     /// Gets the maximum age of this data
     ///

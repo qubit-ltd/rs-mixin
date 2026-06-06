@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Basic information structure
-//!
 
 use chrono::{
     DateTime,
@@ -50,8 +47,18 @@ use crate::{
 /// assert_eq!(info.id, Some(1));
 /// assert_eq!(info.code, "CODE001");
 /// ```
-///
-#[derive(Debug, Clone, Default, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
+#[derive(
+    Debug,
+    Clone,
+    Default,
+    PartialEq,
+    Eq,
+    PartialOrd,
+    Ord,
+    Hash,
+    Serialize,
+    Deserialize,
+)]
 pub struct Info {
     /// Unique identifier
     pub id: Option<i64>,
@@ -80,7 +87,12 @@ impl Info {
     /// # Returns
     ///
     /// The newly created `Info` object
-    pub fn new(id: Option<i64>, code: String, name: String, delete_time: Option<DateTime<Utc>>) -> Self {
+    pub fn new(
+        id: Option<i64>,
+        code: String,
+        name: String,
+        delete_time: Option<DateTime<Utc>>,
+    ) -> Self {
         Self {
             id,
             code,
@@ -226,7 +238,10 @@ impl Info {
     /// `true` when the ID and deletion time are present and the code and
     /// name are non-empty.
     pub fn is_complete(&self) -> bool {
-        self.id.is_some() && !self.code.is_empty() && !self.name.is_empty() && self.delete_time.is_some()
+        self.id.is_some()
+            && !self.code.is_empty()
+            && !self.name.is_empty()
+            && self.delete_time.is_some()
     }
 }
 
@@ -272,7 +287,10 @@ impl Deletable for Info {
 
 impl Emptyful for Info {
     fn is_empty(&self) -> bool {
-        self.id.is_none() && self.code.is_empty() && self.name.is_empty() && self.delete_time.is_none()
+        self.id.is_none()
+            && self.code.is_empty()
+            && self.name.is_empty()
+            && self.delete_time.is_none()
     }
 }
 

@@ -1,20 +1,16 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for username property functionality
-//!
 
 /// A trait indicating that an entity class has a username property
 ///
 /// This trait provides access and setting functionality for the username
 /// of domain objects.
-///
 pub trait WithUsername {
     /// Gets the username of the current object
     ///

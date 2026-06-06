@@ -15,7 +15,9 @@ impl WithName for Row {
 
 #[test]
 fn test_with_name_gets_and_sets_name() {
-    let mut row = Row { name: "old".to_owned() };
+    let mut row = Row {
+        name: "old".to_owned(),
+    };
     row.set_name("new");
     assert_eq!(row.name(), "new");
 }

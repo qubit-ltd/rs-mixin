@@ -1,12 +1,10 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 use chrono::Utc;
 use qubit_mixin::{
     Deletable,
@@ -67,7 +65,8 @@ impl Deletable for CatalogRow {
 
 #[test]
 fn test_info_new() {
-    let info = Info::new(Some(1), "CODE001".to_string(), "Test".to_string(), None);
+    let info =
+        Info::new(Some(1), "CODE001".to_string(), "Test".to_string(), None);
     assert_eq!(info.id(), Some(1));
     assert_eq!(info.code(), "CODE001");
     assert_eq!(info.name(), "Test");
@@ -141,7 +140,12 @@ fn test_info_is_empty() {
 
 #[test]
 fn test_info_normalize() {
-    let mut info = Info::new(Some(1), "  CODE  ".to_string(), "  Name  ".to_string(), None);
+    let mut info = Info::new(
+        Some(1),
+        "  CODE  ".to_string(),
+        "  Name  ".to_string(),
+        None,
+    );
 
     info.normalize();
     assert_eq!(info.code(), "CODE");
@@ -150,7 +154,8 @@ fn test_info_normalize() {
 
 #[test]
 fn test_info_clone() {
-    let info1 = Info::new(Some(1), "CODE".to_string(), "Name".to_string(), None);
+    let info1 =
+        Info::new(Some(1), "CODE".to_string(), "Name".to_string(), None);
 
     let info2 = info1.clone();
     assert_eq!(info1, info2);
@@ -159,13 +164,22 @@ fn test_info_clone() {
 #[test]
 fn test_info_is_complete_requires_all_business_fields() {
     let deleted_at = Utc::now();
-    let complete = Info::new(Some(1), "CODE".to_owned(), "Name".to_owned(), Some(deleted_at));
+    let complete = Info::new(
+        Some(1),
+        "CODE".to_owned(),
+        "Name".to_owned(),
+        Some(deleted_at),
+    );
     assert!(complete.is_complete());
 
-    let missing_id = Info::new(None, "CODE".to_owned(), "Name".to_owned(), Some(deleted_at));
-    let missing_code = Info::new(Some(1), "".to_owned(), "Name".to_owned(), Some(deleted_at));
-    let missing_name = Info::new(Some(1), "CODE".to_owned(), "".to_owned(), Some(deleted_at));
-    let missing_delete_time = Info::new(Some(1), "CODE".to_owned(), "Name".to_owned(), None);
+    let missing_id =
+        Info::new(None, "CODE".to_owned(), "Name".to_owned(), Some(deleted_at));
+    let missing_code =
+        Info::new(Some(1), "".to_owned(), "Name".to_owned(), Some(deleted_at));
+    let missing_name =
+        Info::new(Some(1), "CODE".to_owned(), "".to_owned(), Some(deleted_at));
+    let missing_delete_time =
+        Info::new(Some(1), "CODE".to_owned(), "Name".to_owned(), None);
 
     assert!(!missing_id.is_complete());
     assert!(!missing_code.is_complete());
@@ -216,7 +230,8 @@ fn test_info_copies_to_and_from_trait_backed_rows() {
     assert_eq!("Old Name", snapshot.name());
     assert_eq!(Some(deleted_at), snapshot.delete_time());
 
-    let replacement = Info::new(Some(8), "NEW".to_owned(), "New Name".to_owned(), None);
+    let replacement =
+        Info::new(Some(8), "NEW".to_owned(), "New Name".to_owned(), None);
     replacement.apply_to_deletable(&mut row);
 
     assert_eq!(Some(8), row.id());

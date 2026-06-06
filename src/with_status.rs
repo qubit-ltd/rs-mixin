@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for status property functionality
-//!
 
 use crate::Identifiable;
 
@@ -70,7 +67,6 @@ use crate::Identifiable;
 /// order.set_status(OrderStatus::Paid);
 /// assert_eq!(order.status(), OrderStatus::Paid);
 /// ```
-///
 pub trait WithStatus<S>: Identifiable
 where
     S: Copy,

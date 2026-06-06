@@ -15,7 +15,9 @@ impl WithUdid for Device {
 
 #[test]
 fn test_with_udid_gets_and_sets_udid() {
-    let mut device = Device { udid: "u1".to_owned() };
+    let mut device = Device {
+        udid: "u1".to_owned(),
+    };
     device.set_udid("u2");
     assert_eq!("u2", device.udid());
 }

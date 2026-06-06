@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for name property functionality
-//!
 
 /// A trait indicating that an entity class has a name property
 ///
@@ -44,7 +41,6 @@
 /// category.set_name("Computers");
 /// assert_eq!(category.name(), "Computers");
 /// ```
-///
 pub trait WithName {
     /// Gets the name of the current object
     ///

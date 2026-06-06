@@ -1,18 +1,14 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for universally unique identifier property functionality
-//!
 
 /// A trait indicating that an entity class has a universally unique
 /// identifier (UUID) property
-///
 pub trait WithUuid {
     /// Gets the universally unique identifier of the current object
     ///

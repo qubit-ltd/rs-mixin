@@ -1,12 +1,10 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! # Domain Object Mixin Traits
 //!
 //! This library provides a series of mixin traits for adding common
@@ -17,18 +15,15 @@
 //!
 //! # Main Features
 //!
-//! - **Timestamp Traits**: Manage creation, modification, and deletion
-//!   times
+//! - **Timestamp Traits**: Manage creation, modification, and deletion times
 //! - **Identifier Traits**: Provide identification information such as ID,
 //!   code, and name
-//! - **State Management Traits**: Manage status, visibility, and other
-//!   states
+//! - **State Management Traits**: Manage status, visibility, and other states
 //! - **User Information Traits**: Provide user-related information such as
 //!   username, email, and password
 //! - **Entity Discriminator Traits**: Manage entity discriminator values
 //! - **Validation and Normalization**: Provide data validation and
 //!   normalization functionality
-//!
 
 pub mod auditable;
 pub mod creatable;

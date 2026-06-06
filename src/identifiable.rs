@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for unique identifier functionality
-//!
 
 /// A trait indicating that an entity class has an ID property
 ///
@@ -42,7 +39,6 @@
 /// user.set_id(Some(1));
 /// assert_eq!(user.id(), Some(1));
 /// ```
-///
 pub trait Identifiable {
     /// Gets the unique identifier of the current object
     ///
@@ -56,7 +52,7 @@ pub trait Identifiable {
     ///
     /// # Parameters
     ///
-    /// * `id` - The new unique identifier to be set, `None` indicates
-    ///   clearing the identifier
+    /// * `id` - The new unique identifier to be set, `None` indicates clearing
+    ///   the identifier
     fn set_id(&mut self, id: Option<i64>);
 }

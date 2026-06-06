@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for entity discriminator functionality
-//!
 
 /// A trait indicating that an entity class has an owning entity name
 /// property
@@ -28,7 +25,7 @@ pub trait WithEntity {
     ///
     /// # Parameters
     ///
-    /// * `entity` - The entity name to be set, `None` indicates clearing
-    ///   the association.
+    /// * `entity` - The entity name to be set, `None` indicates clearing the
+    ///   association.
     fn set_entity(&mut self, entity: Option<&str>);
 }

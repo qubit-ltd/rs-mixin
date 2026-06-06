@@ -1,14 +1,11 @@
-/*******************************************************************************
- *
- *    Copyright (c) 2025 - 2026 Haixing Hu.
- *
- *    SPDX-License-Identifier: Apache-2.0
- *
- *    Licensed under the Apache License, Version 2.0.
- *
- ******************************************************************************/
+// =============================================================================
+//    Copyright (c) 2025 - 2026 Haixing Hu.
+//
+//    SPDX-License-Identifier: Apache-2.0
+//
+//    Licensed under the Apache License, Version 2.0.
+// =============================================================================
 //! Traits for last modification time recording functionality
-//!
 
 use chrono::{
     DateTime,
@@ -53,7 +50,6 @@ use chrono::{
 /// doc.set_modify_time(Some(now));
 /// assert_eq!(doc.modify_time(), Some(now));
 /// ```
-///
 pub trait Modifiable {
     /// Gets the last modification time of the current object
     ///
@@ -67,7 +63,7 @@ pub trait Modifiable {
     ///
     /// # Parameters
     ///
-    /// * `time` - The new last modification time to be set, `None`
-    ///   indicates that the object has not been modified
+    /// * `time` - The new last modification time to be set, `None` indicates
+    ///   that the object has not been modified
     fn set_modify_time(&mut self, time: Option<DateTime<Utc>>);
 }

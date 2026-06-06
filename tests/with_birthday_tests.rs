@@ -14,7 +14,10 @@ impl WithBirthday for Person {
     }
 }
 
-fn age_through_trait_object(person: &dyn WithBirthday, date: NaiveDate) -> Option<i32> {
+fn age_through_trait_object(
+    person: &dyn WithBirthday,
+    date: NaiveDate,
+) -> Option<i32> {
     person.age_on(date)
 }
 
@@ -34,8 +37,10 @@ fn test_with_birthday_calculates_age_on_reference_date() {
     let person = Person {
         birthday: Some(birthday),
     };
-    let before_birthday = NaiveDate::from_ymd_opt(2026, 6, 2).expect("valid reference date");
-    let on_birthday = NaiveDate::from_ymd_opt(2026, 6, 3).expect("valid reference date");
+    let before_birthday =
+        NaiveDate::from_ymd_opt(2026, 6, 2).expect("valid reference date");
+    let on_birthday =
+        NaiveDate::from_ymd_opt(2026, 6, 3).expect("valid reference date");
 
     assert_eq!(Some(17), person.age_on(before_birthday));
     assert_eq!(Some(18), person.age_on(on_birthday));
@@ -47,10 +52,14 @@ fn test_with_birthday_reports_adult_state_with_default_and_custom_thresholds() {
     let person = Person {
         birthday: Some(birthday),
     };
-    let reference = NaiveDate::from_ymd_opt(2026, 6, 3).expect("valid reference date");
+    let reference =
+        NaiveDate::from_ymd_opt(2026, 6, 3).expect("valid reference date");
 
     assert_eq!(Some(true), person.is_adult_on(reference));
-    assert_eq!(Some(false), person.is_adult_on_with_threshold(reference, 21));
+    assert_eq!(
+        Some(false),
+        person.is_adult_on_with_threshold(reference, 21)
+    );
 
     let person_without_birthday = Person { birthday: None };
     assert_eq!(None, person_without_birthday.age_on(reference));
@@ -63,7 +72,8 @@ fn test_with_birthday_age_helpers_work_through_trait_objects() {
     let person = Person {
         birthday: Some(birthday),
     };
-    let reference = NaiveDate::from_ymd_opt(2026, 6, 3).expect("valid reference date");
+    let reference =
+        NaiveDate::from_ymd_opt(2026, 6, 3).expect("valid reference date");
 
     assert_eq!(Some(18), age_through_trait_object(&person, reference));
 }
